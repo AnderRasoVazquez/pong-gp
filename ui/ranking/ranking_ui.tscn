@@ -62,10 +62,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 99.0
-margin/top = 52.0
-margin/right = 543.0
-margin/bottom = 366.0
+margin/left = 121.0
+margin/top = 82.0
+margin/right = 565.0
+margin/bottom = 374.0
 scroll/horizontal = true
 scroll/vertical = true
 

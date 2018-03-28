@@ -8,7 +8,9 @@ func _ready():
 	var i = 1
 	for entry in ranking["entries"]:
 		var label = Label.new()
-		label.set_text(str(i) + "º " + str(entry["name"]) + " " + str(entry["score"]) + " " + str(entry["game_mode"]))
+		var text = "%02dº %25s %25s %25s" % [i, str(entry["name"]), str(entry["score"]), str(entry["game_mode"])]
+		#label.set_text(str(i) + "º " + str(entry["name"]) + " " + str(entry["score"]) + " " + str(entry["game_mode"]))
+		label.set_text(text)
 		get_node("ScrollContainer/VBoxContainer").add_child(label)
 		i += 1
 
