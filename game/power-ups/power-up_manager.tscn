@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://game/power-ups/power-up_manager.gd" type="Script" id=1]
+
+[node name="pu_manager" type="Node2D"]
+
+script/script = ExtResource( 1 )
+max_balls = 2
+max_speed_pu = 3
+max_slow_pu = 3
+spawn_chance = 0.15
+
+
