@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://Pong.gd" type="Script" id=1]
+[ext_resource path="res://game/Pong.gd" type="Script" id=1]
 [ext_resource path="res://separator.png" type="Texture" id=2]
 [ext_resource path="res://game/paddle.tscn" type="PackedScene" id=3]
 
