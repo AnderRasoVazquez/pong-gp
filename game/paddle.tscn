@@ -21,9 +21,9 @@ script/script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-PAD_SPEED = 2
-control_key_up = "ui_up"
-control_key_down = "ui_down"
+PAD_SPEED = 4
+control_key_up = "left_move_up"
+control_key_down = "left_move_down"
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 

@@ -9,6 +9,7 @@ var ball_speed = INITIAL_BALL_SPEED
 var direction
 
 onready var screen_size = get_viewport_rect().size
+onready var sprite_size = get_node("Sprite").get_texture().get_size()
 
 func _ready():
 	randomize()
@@ -28,7 +29,7 @@ func check_bounce():
 	# Get current position of the ball
 	var current_pos = get_pos()
 	# Change direction when bouncing on roof or floor:
-	if ((current_pos.y < 0 and direction.y < 0) or (current_pos.y > screen_size.y and direction.y > 0)):
+	if ((current_pos.y - sprite_size.y/2 < 0 and direction.y < 0) or (current_pos.y + sprite_size.y/2 > screen_size.y and direction.y > 0)):
 	    direction.y = -direction.y
 	
 func check_hit():

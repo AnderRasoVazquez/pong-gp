@@ -1,8 +1,11 @@
 extends Node2D
 
 const ball_scene = preload("res://game/ball.tscn")
+const gamemode = ""
 
 onready var screen_size = get_viewport_rect().size
+onready var paddleL = get_node("PaddleL")
+onready var paddleR = get_node("PaddleR")
 var ball
 
 func _ready():
