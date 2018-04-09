@@ -21,7 +21,7 @@ script/script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-PAD_SPEED = 2
+PAD_SPEED = 4
 control_key_up = "ui_up"
 control_key_down = "ui_down"
 

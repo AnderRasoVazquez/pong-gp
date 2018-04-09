@@ -5,9 +5,9 @@
 [node name="pu_manager" type="Node2D"]
 
 script/script = ExtResource( 1 )
-max_balls = 2
+max_duplicate_pu = 50
 max_speed_pu = 3
 max_slow_pu = 3
-spawn_chance = 0.15
+spawn_chance = 5
 
 

@@ -20,6 +20,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 collision/layers = 4
 script/script = ExtResource( 1 )
+max_balls = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 
