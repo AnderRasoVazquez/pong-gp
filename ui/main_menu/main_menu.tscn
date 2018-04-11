@@ -22,9 +22,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 278.0
-margin/top = 154.0
+margin/top = 215.0
 margin/right = 339.0
-margin/bottom = 174.0
+margin/bottom = 235.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -38,9 +38,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 286.0
-margin/top = 71.0
+margin/top = 132.0
 margin/right = 328.0
-margin/bottom = 91.0
+margin/bottom = 152.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -54,9 +54,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 286.0
-margin/top = 210.0
+margin/top = 271.0
 margin/right = 328.0
-margin/bottom = 230.0
+margin/bottom = 291.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -111,16 +111,15 @@ flat = false
 
 [node name="PopupMenu" type="PopupMenu" parent="."]
 
-editor/display_folded = true
 visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 152.0
-margin/top = 107.0
+margin/top = 104.0
 margin/right = 478.0
-margin/bottom = 303.0
+margin/bottom = 259.0
 popup/exclusive = false
 items = [  ]
 
@@ -137,12 +136,19 @@ margin/bottom = 136.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Salir"
+text = "2 PLAYER"
 flat = false
 
 [node name="Sprite" type="Sprite" parent="PopupMenu/2 Player"]
 
-transform/pos = Vector2( 40.9973, 55.4017 )
+transform/pos = Vector2( 39.8386, 26.1301 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Sprite1" type="Sprite" parent="PopupMenu/2 Player"]
+
+transform/pos = Vector2( 40.3789, 84.489 )
+transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CPU - Easy" type="Button" parent="PopupMenu"]
@@ -153,17 +159,26 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 123.0
 margin/top = 21.0
-margin/right = 208.0
+margin/right = 206.0
 margin/bottom = 135.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Salir"
+text = "EASY CPU"
 flat = false
+clip_text = true
 
 [node name="Sprite1" type="Sprite" parent="PopupMenu/CPU - Easy"]
 
-transform/pos = Vector2( 42.9973, 57.4017 )
+transform/pos = Vector2( 39.3456, 27.0494 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+modulate = Color( 0, 1, 0.25, 1 )
+
+[node name="Sprite2" type="Sprite" parent="PopupMenu/CPU - Easy"]
+
+transform/pos = Vector2( 39.8859, 86.489 )
+transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CPU - Hard" type="Button" parent="PopupMenu"]
@@ -179,57 +194,20 @@ margin/bottom = 135.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Salir"
+text = "HARD CPU"
 flat = false
 
-[node name="Sprite2" type="Sprite" parent="PopupMenu/CPU - Hard"]
+[node name="Sprite1" type="Sprite" parent="PopupMenu/CPU - Hard"]
 
-transform/pos = Vector2( 44.4543, 58.5097 )
+transform/pos = Vector2( 43.5137, 28.6705 )
+transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
+modulate = Color( 1, 0, 0, 1 )
 
-[node name="Label" type="Label" parent="PopupMenu"]
+[node name="Sprite3" type="Sprite" parent="PopupMenu/CPU - Hard"]
 
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 40.0
-margin/top = 145.0
-margin/right = 91.0
-margin/bottom = 159.0
-text = "2 Player"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Label1" type="Label" parent="PopupMenu"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 124.0
-margin/top = 148.0
-margin/right = 211.0
-margin/bottom = 162.0
-text = "VS CPU (EASY)"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Label2" type="Label" parent="PopupMenu"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 221.0
-margin/top = 149.0
-margin/right = 315.0
-margin/bottom = 163.0
-text = "VS CPU (HARD)"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+transform/pos = Vector2( 44.3929, 87.0294 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
 
 

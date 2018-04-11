@@ -3,7 +3,7 @@ extends Control
 
 func _ready():
 	get_node("Jugar").connect("pressed", self, "_on_jugar_pressed")
-	get_node("Ranking").connect("pressed", self, "_on_cpu_hard_pressed")
+	get_node("Ranking").connect("pressed", self, "_on_ranking_pressed")
 	get_node("Salir").connect("pressed", self, "_on_exit_pressed")
 	get_node("Logout").connect("pressed", self, "_on_logout_pressed")
 	
@@ -27,7 +27,7 @@ func _on_jugar_pressed():
 	get_node("PopupMenu").popup()
 
 
-func _on_cpu_hard_pressed():
+func _on_ranking_pressed():
 	get_tree().change_scene("res://ui/ranking/ranking_ui.tscn")
 
 
@@ -36,16 +36,16 @@ func _on_exit_pressed():
 
 
 func _on_2p_pressed():
-	print("2p")
-	get_tree().change_scene("res://Pong.tscn")
+	get_tree().change_scene("res://game/pong_VS.tscn")
 
 
 func _on_easy_pressed():
-	print("easy, sin implementar")
+	get_tree().change_scene("res://game/pong_easy.tscn")
 
 
 func _on_hard_pressed():
-	print("hard, sin implementar")
+	get_tree().change_scene("res://game/pong_hard.tscn")
+
 
 func _on_logout_pressed():
 	login_manager.logout()
