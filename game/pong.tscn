@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://game/pong.gd" type="Script" id=1]
 [ext_resource path="res://separator.png" type="Texture" id=2]
 [ext_resource path="res://game/paddle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://right_pallete.png" type="Texture" id=4]
 
 [node name="game" type="Node2D"]
 
@@ -19,8 +20,14 @@ transform/pos = Vector2( 40, 180 )
 
 [node name="PaddleR" parent="." instance=ExtResource( 3 )]
 
+editor/display_folded = true
 transform/pos = Vector2( 600, 180 )
 control_key_up = "right_move_up"
 control_key_down = "right_move_down"
 
+[node name="Sprite" parent="PaddleR"]
 
+texture = ExtResource( 4 )
+
+
+[editable path="PaddleR"]
