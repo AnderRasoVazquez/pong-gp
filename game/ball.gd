@@ -45,9 +45,9 @@ func check_bounce():
 	    direction.y = -direction.y
 	
 func check_hit():
-	var collider = get_collider()
 	# Check if the ball is touching a paddle.
-	if collider:
+	if is_colliding():
+		var collider = get_collider()
 		ball_speed = ball_speed*BALL_ACCELERATION
 		direction.x = -direction.x
 		if (collider.moving == "up"):

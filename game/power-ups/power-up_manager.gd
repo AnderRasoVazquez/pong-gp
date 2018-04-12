@@ -3,7 +3,7 @@ extends Node2D
 export var max_duplicate_pu = 1
 export var max_speed_pu = 3
 export var max_slow_pu = 3
-export var spawn_chance = 0.5
+export var spawn_chance = 0.4
 const pu_names = ["duplicate", "speed_up", "slow_down"]
 var screen_size
 
@@ -19,7 +19,6 @@ func _process(delta):
 func spawn_pu(pu_name):
 	var power_up = null
 	var tree = get_tree()
-	print("spawn " + pu_name)
 	if pu_name == pu_names[0]: # duplicate
 		if tree.get_nodes_in_group(pu_name).size() < max_duplicate_pu:
 			power_up = load("res://game/power-ups/duplicate.tscn").instance()
