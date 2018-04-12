@@ -10,7 +10,6 @@ extents = Vector2( 4, 4 )
 
 [node name="ball" type="KinematicBody2D"]
 
-transform/pos = Vector2( 353.78, 184.11 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -22,7 +21,7 @@ script/script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-INITIAL_BALL_SPEED = 2
+INITIAL_BALL_SPEED = 3
 BALL_ACCELERATION = 1.1
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
