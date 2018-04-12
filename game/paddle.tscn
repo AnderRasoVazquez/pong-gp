@@ -22,10 +22,6 @@ __meta__ = {
 "_edit_group_": true
 }
 PAD_SPEED = 4
-<<<<<<< HEAD
-control_key_up = "ui_up"
-control_key_down = "ui_down"
-=======
 control_key_up = "left_move_up"
 control_key_down = "left_move_down"
 
@@ -33,7 +29,6 @@ control_key_down = "left_move_down"
 
 transform/scale = Vector2( 1, 2 )
 texture = ExtResource( 2 )
->>>>>>> master
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 
@@ -42,5 +37,3 @@ transform/scale = Vector2( 1, 2 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
-
-
