@@ -21,7 +21,7 @@ script/script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-INITIAL_BALL_SPEED = 2
+INITIAL_BALL_SPEED = 3
 BALL_ACCELERATION = 1.1
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]

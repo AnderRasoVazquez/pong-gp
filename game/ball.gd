@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Constant for initial ball speed (in pixels/second).
-export var INITIAL_BALL_SPEED = 2
+export var INITIAL_BALL_SPEED = 3
 # Constant for ball acceleration when hitting a paddle.
 export var BALL_ACCELERATION = 1.1
 # Current speed of the ball (also in pixels/second).
@@ -13,7 +13,7 @@ onready var sprite_size = get_node("Sprite").get_texture().get_size()
 
 func _ready():
 	randomize()
-	direction = Vector2(1, randf()*2 -1)
+	direction = Vector2(pow(-1, int(rand_range(0,2))), randf()*2 -1).normalized()
 	
 	set_process(true)
 	
@@ -33,10 +33,13 @@ func check_bounce():
 	    direction.y = -direction.y
 	
 func check_hit():
-	# Check if the ball is touching a pafddle.
-	if get_collider():
+	var collider = get_collider()
+	# Check if the ball is touching a paddle.
+	if collider:
 		ball_speed = ball_speed*BALL_ACCELERATION
 		direction.x = -direction.x
-		print(direction.y)
-		direction.y = direction.y + (randf()*2-1)/2
-		print(direction.y)
+		if (collider.moving == "up"):
+			direction.y = direction.y - abs(direction.y * 0.25)
+		if (collider.moving == "down"):
+			direction.y = direction.y + abs(direction.y * 0.25)
+		direction.normalized()
