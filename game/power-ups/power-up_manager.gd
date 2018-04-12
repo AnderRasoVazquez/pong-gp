@@ -1,9 +1,9 @@
 extends Node2D
 
-export var max_duplicate_pu = 50
+export var max_duplicate_pu = 1
 export var max_speed_pu = 3
 export var max_slow_pu = 3
-export var spawn_chance = 5
+export var spawn_chance = 0.5
 const pu_names = ["duplicate", "speed_up", "slow_down"]
 var screen_size
 

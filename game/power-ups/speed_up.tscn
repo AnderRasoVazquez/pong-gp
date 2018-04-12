@@ -20,7 +20,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 collision/layers = 4
 script/script = ExtResource( 1 )
-fast_speed = 5
+speed_mult = 1.5
 fast_time = 3
 
 [node name="Sprite" type="Sprite" parent="."]

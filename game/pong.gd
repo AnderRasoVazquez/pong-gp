@@ -12,11 +12,10 @@ onready var paddleL = get_node("PaddleL")
 onready var paddleR = get_node("PaddleR")
 onready var score1_label = get_node("UI").get_node("Score1")
 onready var score2_label = get_node("UI").get_node("Score2")
-var ball
 
 func _ready():
-	#activate_power_ups()
 	spawn_ball()
+	activate_power_ups()
 	set_process(true)
 
 func _process(delta):

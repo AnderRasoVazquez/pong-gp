@@ -7,7 +7,7 @@ export var BALL_ACCELERATION = 1.1
 # Current speed of the ball (also in pixels/second).
 var ball_speed = INITIAL_BALL_SPEED
 var direction
-var overload_speed
+var overload_mult = 0
 var overload_timer = 0
 var last_paddle
 
@@ -25,13 +25,17 @@ func _process(delta):
 	# Check if the ball hits a paddle.
 	check_hit()
 	# Ball movement:
-	if overload_timer <= 0:
-		move(direction * ball_speed)
-	else:
-		move(direction * overload_speed)
+	move(direction * get_speed())
+	if overload_timer > 0:
 		overload_timer -= delta
 		if overload_timer <= 0:
 			overload_timer = 0
+	
+func get_speed():
+	var speed = ball_speed
+	if overload_timer > 0:
+		speed = speed * overload_mult
+	return speed
 	
 func check_bounce():
 	# Get current position of the ball
@@ -51,7 +55,8 @@ func check_hit():
 		if (collider.moving == "down"):
 			direction.y = direction.y + abs(direction.y * 0.25)
 		direction.normalized()
+		last_paddle = collider
 
-func overload(speed, time):
-	overload_speed = speed
+func overload(mult, time):
+	overload_mult = mult
 	overload_timer += time
