@@ -7,12 +7,9 @@
 
 script/script = ExtResource( 2 )
 
-[node name="UI" parent="."]
-
-editor/display_folded = true
-
 [node name="Score1" parent="UI"]
 
+editor/display_folded = true
 margin/bottom = 20.0
 
 [node name="Score2" parent="UI"]

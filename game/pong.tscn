@@ -46,10 +46,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 50.0
-margin/bottom = 25.0
+margin/left = 1.0
+margin/top = 1.0
+margin/right = 51.0
+margin/bottom = 26.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "0"
@@ -80,16 +80,83 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 244.0
-margin/top = 4.0
-margin/right = 284.0
-margin/bottom = 18.0
+margin/left = 271.0
+margin/top = 2.0
+margin/right = 316.0
+margin/bottom = 16.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="PanelP1Win" type="Panel" parent="UI"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 168.0
+margin/top = 149.0
+margin/right = 474.0
+margin/bottom = 189.0
+
+[node name="Label" type="Label" parent="UI/PanelP1Win"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 89.0
+margin/top = 13.0
+margin/right = 212.0
+margin/bottom = 27.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "¡JUGADOR 1 GANA!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="PanelP2Win" type="Panel" parent="UI"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 168.0
+margin/top = 149.0
+margin/right = 474.0
+margin/bottom = 189.0
+
+[node name="Label" type="Label" parent="UI/PanelP2Win"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 89.0
+margin/top = 13.0
+margin/right = 212.0
+margin/bottom = 27.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "¡JUGADOR 2 GANA!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="RankingTimer" type="Timer" parent="."]
+
+process/pause_mode = 2
+process_mode = 1
+wait_time = 3.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="RankingTimer" to="." method="_on_RankingTimer_timeout"]
 
 
 [editable path="PaddleR"]

@@ -4,6 +4,8 @@ const ball_scene = preload("res://game/ball.tscn")
 const gamemode = ""
 var player1_score = 0
 var player2_score = 0
+var points = 0
+var win_points = 21
 
 onready var screen_size = get_viewport_rect().size
 onready var paddleL = get_node("PaddleL")
@@ -11,12 +13,13 @@ onready var paddleR = get_node("PaddleR")
 onready var score1_label = get_node("UI").get_node("Score1")
 onready var score2_label = get_node("UI").get_node("Score2")
 onready var time_label = get_node("UI").get_node("Time")
+onready var ranking_timer = get_node("RankingTimer")
 onready var time_start = OS.get_unix_time()
-var ball
+onready var ball = ball_scene.instance()
+
 
 func _ready():
 	# First ball is deployed.
-	ball = ball_scene.instance()
 	add_child(ball)
 	ball.set_pos(screen_size/2)
 	
@@ -37,6 +40,15 @@ func check_point_scored():
 		if (ball_pos.x > screen_size.x):
 			player1_score +=1
 			score1_label.set_text(str(player1_score))
+		if player1_score >= win_points:
+			get_node("UI/PanelP1Win").show()
+			get_tree().set_pause(true)
+			ranking_manager.add_score(points, gamemode)
+			ranking_timer.start()
+		elif player2_score >= win_points:
+			get_node("UI/PanelP2Win").show()
+			get_tree().set_pause(true)
+			ranking_timer.start()
 		# Current ball is destroyed and a new one is created.
 		ball.queue_free()
 		ball = ball_scene.instance()
@@ -45,8 +57,12 @@ func check_point_scored():
 		
 func time_elapsed():
 	var time_now = OS.get_unix_time()
-	var elapsed = time_now - time_start
-	var minutes = elapsed / 60
-	var seconds = elapsed % 60
-	var str_elapsed = "%02d : %02d" % [minutes, seconds]
-	time_label.set_text(str_elapsed)
+	points = time_now - time_start
+	var minutes = points / 60
+	var seconds = points % 60
+	var str_points = "%02d : %02d" % [minutes, seconds]
+	time_label.set_text(str_points)
+
+
+func _on_RankingTimer_timeout():
+	get_tree().change_scene("res://ui/ranking/ranking_ui.tscn")
