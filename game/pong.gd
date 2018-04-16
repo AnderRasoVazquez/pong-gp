@@ -11,6 +11,7 @@ onready var paddleR = get_node("PaddleR")
 onready var score1_label = get_node("UI").get_node("Score1")
 onready var score2_label = get_node("UI").get_node("Score2")
 var ball
+var win_points = 21
 
 func _ready():
 	# First ball is deployed.
@@ -34,6 +35,13 @@ func check_point_scored():
 		if (ball_pos.x > screen_size.x):
 			player1_score +=1
 			score1_label.set_text(str(player1_score))
+		if player1_score >= win_points:
+			get_node("UI/PanelP1Win").show()
+			get_tree().set_pause(true)
+		elif player2_score >= win_points:
+			get_node("UI/PanelP2Win").show()
+			get_tree().set_pause(true)
+			
 		# Current ball is destroyed and a new one is created.
 		ball.queue_free()
 		ball = ball_scene.instance()
