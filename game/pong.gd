@@ -10,6 +10,8 @@ onready var paddleL = get_node("PaddleL")
 onready var paddleR = get_node("PaddleR")
 onready var score1_label = get_node("UI").get_node("Score1")
 onready var score2_label = get_node("UI").get_node("Score2")
+onready var time_label = get_node("UI").get_node("Time")
+onready var time_start = OS.get_unix_time()
 var ball
 
 func _ready():
@@ -22,6 +24,7 @@ func _ready():
 
 func _process(delta):
 	check_point_scored()
+	time_elapsed()
 
 
 func check_point_scored():
@@ -39,3 +42,11 @@ func check_point_scored():
 		ball = ball_scene.instance()
 		get_parent().add_child(ball)
 		ball.set_pos(screen_size/2)
+		
+func time_elapsed():
+	var time_now = OS.get_unix_time()
+	var elapsed = time_now - time_start
+	var minutes = elapsed / 60
+	var seconds = elapsed % 60
+	var str_elapsed = "%02d : %02d" % [minutes, seconds]
+	time_label.set_text(str_elapsed)
