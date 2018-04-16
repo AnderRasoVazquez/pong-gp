@@ -20,7 +20,9 @@ func _on_back_pressed():
 	get_tree().change_scene("res://ui/main_menu/main_menu.tscn")
 
 func seconds_to_time(points):
-	var minutes = points / 60
-	var seconds = points % 60
+	var ppoints = int(points)
+	var minutes = ppoints / 60
+	# TODO bug al parsear puntuación
+	var seconds = ppoints % 60
 	var str_points = "%02d : %02d" % [minutes, seconds]
 	return str_points

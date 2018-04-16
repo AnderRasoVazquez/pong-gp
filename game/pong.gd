@@ -5,7 +5,7 @@ const gamemode = ""
 var player1_score = 0
 var player2_score = 0
 var points = 0
-var win_points = 21
+var win_points = 1
 
 onready var screen_size = get_viewport_rect().size
 onready var paddleL = get_node("PaddleL")
@@ -66,3 +66,6 @@ func time_elapsed():
 
 func _on_RankingTimer_timeout():
 	get_tree().change_scene("res://ui/ranking/ranking_ui.tscn")
+	get_tree().set_pause(false)
+	
+	
