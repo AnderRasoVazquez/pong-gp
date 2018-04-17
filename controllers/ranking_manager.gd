@@ -59,7 +59,7 @@ func _save_ranking():
 # Class to sort scores
 class MyCustomSorter:
 	static func sort(a, b):
-		if a["score"] < b["score"]:
+		if a["score"] > b["score"]:
 			return false
 		return true
 

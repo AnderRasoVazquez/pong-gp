@@ -1,6 +1,6 @@
 extends Area2D
 
-export var timeout = 6
+export var timeout = 7
 var name = "generic"
 
 func _ready():
