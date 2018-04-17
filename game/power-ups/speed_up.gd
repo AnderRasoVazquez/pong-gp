@@ -1,6 +1,6 @@
 extends "res://game/power-ups/power-up.gd"
 
-export var speed_mult = 1.5
+export var speed_mult = 1.6
 export var fast_time = 3
 
 func _ready():

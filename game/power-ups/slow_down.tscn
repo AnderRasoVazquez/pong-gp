@@ -20,7 +20,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 collision/layers = 4
 script/script = ExtResource( 1 )
-timeout = 1
+timeout = 7
 slow_speed = 2
 slow_time = 3
 
