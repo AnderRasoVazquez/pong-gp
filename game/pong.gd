@@ -22,8 +22,8 @@ func _ready():
 	# First ball is deployed.
 	add_child(ball)
 	ball.set_pos(screen_size/2)
-	
 	set_process(true)
+	get_tree().set_pause(false)
 
 func _process(delta):
 	if (Input.is_action_pressed(("ui_cancel"))):
@@ -35,6 +35,7 @@ func check_point_scored():
 	var ball_pos = ball.get_pos()
 	# Check gameover
 	if (ball_pos.x < 0 or ball_pos.x > screen_size.x):
+		ball.queue_free()
 		if (ball_pos.x < 0):
 			player2_score +=1
 			score2_label.set_text(str(player2_score))
@@ -50,14 +51,15 @@ func check_point_scored():
 			get_node("UI/PanelP2Win").show()
 			get_tree().set_pause(true)
 			ranking_timer.start()
-		# Current ball is destroyed and a new one is created.
-		ball.queue_free()
-		ball = ball_scene.instance()
-		get_parent().add_child(ball)
-		ball.set_pos(screen_size/2)
+		else:	
+			# A new ball is created.
+			ball = ball_scene.instance()
+			get_parent().add_child(ball)
+			ball.set_pos(screen_size/2)
 
 func _on_RankingTimer_timeout():
 	get_tree().change_scene("res://ui/ranking/ranking_ui.tscn")
+	queue_free()
 
 func enter_pause():
 	get_tree().set_pause(true)
@@ -70,3 +72,4 @@ func _on_ButtonContinue_pressed():
 
 func _on_ButtonQuit_pressed():
 	get_tree().change_scene("res://ui/main_menu/main_menu.tscn")
+	get_tree().set_pause(false)
