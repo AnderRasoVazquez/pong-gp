@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://ui/ranking/ranking_ui.gd" type="Script" id=1]
+[ext_resource path="res://fonts/KenVector Future.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+
+font/size = 16
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+
+font/size = 16
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 2 )
 
 [node name="Control" type="Control"]
 
@@ -36,6 +51,7 @@ margin/left = 214.0
 margin/top = 19.0
 margin/right = 274.0
 margin/bottom = 33.0
+custom_fonts/font = SubResource( 1 )
 text = "RANKING"
 percent_visible = 1.0
 lines_skipped = 0
@@ -51,6 +67,7 @@ margin/left = 17.0
 margin/top = 13.0
 margin/right = 69.0
 margin/bottom = 33.0
+custom_fonts/font = SubResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null

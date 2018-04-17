@@ -1,6 +1,42 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://ui/register/register_ui.gd" type="Script" id=1]
+[ext_resource path="res://fonts/KenVector Future.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+
+font/size = 16
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+
+font/size = 16
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+
+font/size = 16
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+
+font/size = 16
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+
+font/size = 16
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 2 )
 
 [node name="main" type="Control"]
 
@@ -32,10 +68,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 161.0
+margin/left = 184.0
 margin/top = 91.0
-margin/right = 213.0
-margin/bottom = 105.0
+margin/right = 267.0
+margin/bottom = 109.0
+custom_fonts/font = SubResource( 1 )
 text = "usuario"
 percent_visible = 1.0
 lines_skipped = 0
@@ -47,10 +84,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 142.0
+margin/left = 138.0
 margin/top = 127.0
-margin/right = 212.0
-margin/bottom = 141.0
+margin/right = 268.0
+margin/bottom = 145.0
+custom_fonts/font = SubResource( 2 )
 text = "contraseña"
 percent_visible = 1.0
 lines_skipped = 0
@@ -62,10 +100,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 95.0
+margin/left = 51.0
 margin/top = 172.0
-margin/right = 212.0
-margin/bottom = 186.0
+margin/right = 268.0
+margin/bottom = 190.0
+custom_fonts/font = SubResource( 3 )
 text = "repetir contraseña"
 percent_visible = 1.0
 lines_skipped = 0
@@ -109,10 +148,11 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 232.0
+margin/left = 222.0
 margin/top = 260.0
-margin/right = 315.0
-margin/bottom = 280.0
+margin/right = 369.0
+margin/bottom = 284.0
+custom_fonts/font = SubResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -127,8 +167,9 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 29.0
 margin/top = 23.0
-margin/right = 70.0
+margin/right = 81.0
 margin/bottom = 43.0
+custom_fonts/font = SubResource( 5 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -141,9 +182,9 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 224.0
+margin/left = 278.0
 margin/top = 87.0
-margin/right = 431.0
+margin/right = 485.0
 margin/bottom = 114.0
 placeholder/alpha = 0.6
 focus_mode = 2
@@ -156,9 +197,9 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 224.0
+margin/left = 278.0
 margin/top = 125.0
-margin/right = 431.0
+margin/right = 485.0
 margin/bottom = 150.0
 placeholder/alpha = 0.6
 secret = true
@@ -172,9 +213,9 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 225.0
+margin/left = 279.0
 margin/top = 169.0
-margin/right = 431.0
+margin/right = 485.0
 margin/bottom = 199.0
 placeholder/alpha = 0.6
 secret = true

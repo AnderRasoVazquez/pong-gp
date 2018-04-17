@@ -1,6 +1,35 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://ui/login/login_ui.gd" type="Script" id=1]
+[ext_resource path="res://fonts/KenVector Future.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+
+font/size = 16
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+
+font/size = 16
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+
+font/size = 16
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+
+font/size = 16
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 2 )
 
 [node name="main" type="Control"]
 
@@ -32,10 +61,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 140.0
-margin/top = 99.0
+margin/left = 108.0
+margin/top = 96.0
 margin/right = 191.0
-margin/bottom = 113.0
+margin/bottom = 114.0
+custom_fonts/font = SubResource( 1 )
 text = "usuario"
 percent_visible = 1.0
 lines_skipped = 0
@@ -47,10 +77,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 120.0
-margin/top = 137.0
+margin/left = 60.0
+margin/top = 135.0
 margin/right = 190.0
-margin/bottom = 151.0
+margin/bottom = 153.0
+custom_fonts/font = SubResource( 2 )
 text = "contraseña"
 percent_visible = 1.0
 lines_skipped = 0
@@ -109,10 +140,11 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 194.0
-margin/top = 232.0
-margin/right = 292.0
-margin/bottom = 252.0
+margin/left = 119.0
+margin/top = 234.0
+margin/right = 272.0
+margin/bottom = 258.0
+custom_fonts/font = SubResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -125,10 +157,11 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 379.0
-margin/top = 233.0
-margin/right = 462.0
-margin/bottom = 253.0
+margin/left = 341.0
+margin/top = 236.0
+margin/right = 488.0
+margin/bottom = 260.0
+custom_fonts/font = SubResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null

@@ -1,13 +1,17 @@
 extends Control
 
 
+const RankingLabel = preload("res://widgets/LabelRankingResult.tscn")
+
+
 func _ready():
 	get_node("Panel/Volver").connect("pressed", self, "_on_back_pressed")
 	
 	var ranking = ranking_manager.get_ranking()
 	var i = 1
 	for entry in ranking["entries"]:
-		var label = Label.new()
+		#var label = Label.new()
+		var label = RankingLabel.instance()
 		
 		var text = "%02dº %25s %25s %25s" % [i, str(entry["name"]), seconds_to_time(entry["score"]), str(entry["game_mode"])]
 		#label.set_text(str(i) + "º " + str(entry["name"]) + " " + str(entry["score"]) + " " + str(entry["game_mode"]))
