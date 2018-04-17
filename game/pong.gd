@@ -5,7 +5,7 @@ const gamemode = ""
 var player1_score = 0
 var player2_score = 0
 var points = 0
-var win_points = 21
+var win_points = 1
 
 onready var screen_size = get_viewport_rect().size
 onready var paddleL = get_node("PaddleL")
@@ -13,7 +13,7 @@ onready var paddleR = get_node("PaddleR")
 onready var score1_label = get_node("UI").get_node("Score1")
 onready var score2_label = get_node("UI").get_node("Score2")
 onready var time_label = get_node("UI").get_node("Time")
-onready var ranking_timer = get_node("RankingTimer")
+onready var ranking_timer = get_node("UI/RankingTimer")
 onready var time_start = OS.get_unix_time()
 onready var ball = ball_scene.instance()
 
@@ -26,9 +26,10 @@ func _ready():
 	set_process(true)
 
 func _process(delta):
+	if (Input.is_action_pressed(("ui_cancel"))):
+		enter_pause()
 	check_point_scored()
-	time_elapsed()
-
+	points = time_label.points
 
 func check_point_scored():
 	var ball_pos = ball.get_pos()
@@ -54,15 +55,18 @@ func check_point_scored():
 		ball = ball_scene.instance()
 		get_parent().add_child(ball)
 		ball.set_pos(screen_size/2)
-		
-func time_elapsed():
-	var time_now = OS.get_unix_time()
-	points = time_now - time_start
-	var minutes = points / 60
-	var seconds = points % 60
-	var str_points = "%02d : %02d" % [minutes, seconds]
-	time_label.set_text(str_points)
-
 
 func _on_RankingTimer_timeout():
 	get_tree().change_scene("res://ui/ranking/ranking_ui.tscn")
+
+func enter_pause():
+	get_tree().set_pause(true)
+	get_node("UI/PanelPause").show()
+
+func _on_ButtonContinue_pressed():
+	get_node("UI/PanelPause").hide()
+	get_tree().set_pause(false)
+
+
+func _on_ButtonQuit_pressed():
+	get_tree().change_scene("res://ui/main_menu/main_menu.tscn")
