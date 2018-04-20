@@ -4,13 +4,11 @@ export var timeout = 7
 var name = "generic"
 
 func _ready():
-	print("timeout en " + str(timeout))
 	self.connect("body_enter", self, "collide")
 	set_process(true)
 
 func _process(delta):
 	timeout -= delta
-	print(timeout)
 	if timeout <= 0:
 		despawn()
 

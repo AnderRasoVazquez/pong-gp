@@ -68,9 +68,9 @@ font/font = ExtResource( 5 )
 script/script = ExtResource( 1 )
 win_points = 2
 
-[node name="separator" type="Sprite" parent="."]
+[node name="Separator" type="Sprite" parent="."]
 
-transform/pos = Vector2( 320, 200 )
+transform/pos = Vector2( 320, 224 )
 texture = ExtResource( 2 )
 
 [node name="PaddleL" parent="." instance=ExtResource( 3 )]
@@ -108,11 +108,12 @@ size_flags/vertical = 0
 margin/left = 1.0
 margin/top = 1.0
 margin/right = 51.0
-margin/bottom = 26.0
+margin/bottom = 30.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "0"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -126,11 +127,12 @@ size_flags/vertical = 0
 margin/left = 590.0
 margin/top = 0.0
 margin/right = 640.0
-margin/bottom = 25.0
+margin/bottom = 29.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "0"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -142,14 +144,14 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 271.0
+margin/left = 279.0
 margin/top = 2.0
-margin/right = 316.0
-margin/bottom = 20.0
+margin/right = 364.0
+margin/bottom = 25.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
-text = "0"
+text = "00 : 00"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

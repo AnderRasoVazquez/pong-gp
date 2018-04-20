@@ -20,6 +20,7 @@ func _ready():
 	set_process(true)
 	
 func _process(delta):
+	print(ball_speed)
 	# Check if ball bounces on the walls.
 	check_bounce()
 	# Check if the ball hits a paddle.

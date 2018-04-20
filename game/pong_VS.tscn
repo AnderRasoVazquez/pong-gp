@@ -15,5 +15,9 @@ margin/bottom = 20.0
 
 margin/bottom = 20.0
 
+[node name="Time" parent="UI"]
+
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
 
 [editable path="PaddleR"]

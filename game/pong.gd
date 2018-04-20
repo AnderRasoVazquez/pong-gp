@@ -60,11 +60,13 @@ func check_point_scored(ball):
 		ball.queue_free()
 
 		if player1_score >= win_points:
+			time_label.set_process(false)
 			get_node("UI/PanelP1Win").show()
 			get_tree().set_pause(true)
 			ranking_manager.add_score(points, gamemode)
 			ranking_timer.start()
 		elif player2_score >= win_points:
+			time_label.set_process(false)
 			get_node("UI/PanelP2Win").show()
 			get_tree().set_pause(true)
 			ranking_timer.start()
