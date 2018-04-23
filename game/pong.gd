@@ -7,7 +7,7 @@ const gamemode = ""
 var player1_score = 0
 var player2_score = 0
 var points = 0
-export var win_points = 2
+export var win_points = 21
 
 onready var screen_size = get_viewport_rect().size
 onready var paddleL = get_node("PaddleL")

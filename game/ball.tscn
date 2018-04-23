@@ -15,7 +15,6 @@ colors = ColorArray( 1, 0.9375, 0, 1, 0.902344, 0.507568, 0, 1, 0, 0, 0, 1, 1, 0
 
 [node name="ball" type="KinematicBody2D"]
 
-transform/pos = Vector2( 173.28, 155.23 )
 z/z = -1
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -44,7 +43,7 @@ texture = ExtResource( 2 )
 [node name="Particles" type="Particles2D" parent="."]
 
 config/amount = 64
-config/lifetime = 1.0
+config/lifetime = 0.5
 config/process_mode = 1
 config/half_extents = Vector2( 4, 4 )
 config/local_space = false
