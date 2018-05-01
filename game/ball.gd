@@ -52,9 +52,10 @@ func check_hit():
 			ball_speed = ball_speed*BALL_ACCELERATION
 			direction.x = -direction.x
 			if (collider.moving == "up"):
-				direction.y = direction.y - abs(direction.y * 0.25)
+				# sqrt(2)/2 es el valor de y si la bola se mueve a 45º
+				direction.y = direction.y - (sqrt(2)/4)
 			if (collider.moving == "down"):
-				direction.y = direction.y + abs(direction.y * 0.25)
+				direction.y = direction.y + (sqrt(2)/4)
 			direction.normalized()
 			last_paddle = collider
 		else:
