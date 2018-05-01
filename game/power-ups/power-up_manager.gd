@@ -1,9 +1,9 @@
 extends Node2D
 
-export var max_duplicate_pu = 1
-export var max_speed_pu = 3
-export var max_slow_pu = 3
-export var spawn_chance = 0.4
+export var max_duplicate_pu = 3
+export var max_speed_pu = 4
+export var max_slow_pu = 4
+export var spawn_chance = 0.5
 const pu_names = ["duplicate", "speed_up", "slow_down"]
 var screen_size
 
@@ -31,7 +31,7 @@ func spawn_pu(pu_name):
 	if power_up != null:
 		var x = screen_size.x
 		var y = screen_size.y
-		var pos = Vector2(rand_range(x*15/100, x*85/100),rand_range(y*10/100, y*90/100))
+		var pos = Vector2(rand_range(x*25/100, x*75/100),rand_range(y*20/100, y*80/100))
 		power_up.set_pos(pos)
 		add_child(power_up)
 		power_up.add_to_group(pu_name)

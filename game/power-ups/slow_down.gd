@@ -9,4 +9,3 @@ func _ready():
 func do_the_thing(game_node, body):
 	if body.last_paddle != null:
 		body.last_paddle.slow_down(slow_speed, slow_time)
-	print(body.get_pos())

@@ -23,6 +23,5 @@ func do_the_thing(game_node, body):
 	pass
 
 func despawn():
-	print("despawn " + name)
 	remove_from_group(name)
 	queue_free()
