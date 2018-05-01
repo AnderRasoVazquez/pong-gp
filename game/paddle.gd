@@ -42,13 +42,17 @@ func get_speed():
 func move_up():
 	moving = "up"
 	var current_pos = get_pos()
-	if(current_pos.y - get_node("Sprite").get_texture().get_size().y/2> 0):
+	var sprite = get_node("Sprite").get_texture()
+	var sprite_scale = get_node("Sprite").get_scale()
+	if(current_pos.y - (sprite.get_size().y*sprite_scale.y)/2 > 0):
 		move(Vector2(0,-1) * get_speed())
 	
 func move_down():
 	moving = "down"
 	var current_pos = get_pos()
-	if(current_pos.y + get_node("Sprite").get_texture().get_size().y/2 < screen_size.y):
+	var sprite = get_node("Sprite").get_texture()
+	var sprite_scale = get_node("Sprite").get_scale()
+	if(current_pos.y + (sprite.get_size().y*sprite_scale.y)/2 < screen_size.y):
 		move(Vector2(0,1) * get_speed())
 	
 func set_player_controlled(boolean):
