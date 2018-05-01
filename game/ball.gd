@@ -48,14 +48,17 @@ func check_hit():
 	# Check if the ball is touching a paddle.
 	if is_colliding():
 		var collider = get_collider()
-		ball_speed = ball_speed*BALL_ACCELERATION
-		direction.x = -direction.x
-		if (collider.moving == "up"):
-			direction.y = direction.y - abs(direction.y * 0.25)
-		if (collider.moving == "down"):
-			direction.y = direction.y + abs(direction.y * 0.25)
-		direction.normalized()
-		last_paddle = collider
+		if collider != last_paddle:
+			ball_speed = ball_speed*BALL_ACCELERATION
+			direction.x = -direction.x
+			if (collider.moving == "up"):
+				direction.y = direction.y - abs(direction.y * 0.25)
+			if (collider.moving == "down"):
+				direction.y = direction.y + abs(direction.y * 0.25)
+			direction.normalized()
+			last_paddle = collider
+		else:
+			collider.disable()
 
 func overload(mult, time):
 	overload_mult = mult

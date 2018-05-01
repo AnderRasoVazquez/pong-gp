@@ -14,6 +14,8 @@ onready var screen_size = get_viewport_rect().size
 var slow_timer = 0
 var slow_speed
 
+var time_disabled = 0
+
 func _ready():
 	set_process(true)
 	
@@ -30,6 +32,10 @@ func _process(delta):
 		slow_timer -= delta
 		if slow_timer <= 0:
 			slow_timer = 0
+	if time_disabled > 0:
+		time_disabled -= 1
+		if time_disabled <= 0:
+			enable()
 
 func get_speed():
 	var speed
@@ -61,3 +67,12 @@ func set_player_controlled(boolean):
 func slow_down(speed, time):
 	slow_speed = speed
 	slow_timer += time
+
+func disable():
+	var collision = get_node("Hitbox")
+	collision.set_trigger(true)
+	time_disabled = 5
+	
+func enable():
+	var collision = get_node("Hitbox")
+	collision.set_trigger(false)
