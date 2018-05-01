@@ -1,6 +1,6 @@
 extends Area2D
 
-export var timeout = 7
+export var timeout = 0
 var name = "generic"
 
 func _ready():
@@ -8,9 +8,11 @@ func _ready():
 	set_process(true)
 
 func _process(delta):
-	timeout -= delta
-	if timeout <= 0:
-		despawn()
+	# los power-ups ya no desaparecen
+	#timeout -= delta
+	#if timeout <= 0:
+	#	despawn()
+	pass
 
 func collide(body):
 	var game_node = get_tree().get_root().get_node("game")
