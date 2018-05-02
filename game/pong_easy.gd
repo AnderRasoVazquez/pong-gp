@@ -20,7 +20,7 @@ func control_pad():
 	else:
 		paddleR.move_down()
 	var paddle_pos = paddleR.get_pos()
-	if paddle_pos.y > screen_size.y*0.95 or paddle_pos.y < screen_size.y*0.05:
+	if paddle_pos.y > screen_size.y*0.9 or paddle_pos.y < screen_size.y*0.1:
 		paddle_flip()
 
 func paddle_flip():

@@ -6,7 +6,6 @@
 [node name="game" instance=ExtResource( 1 )]
 
 script/script = ExtResource( 2 )
-win_points = 21
 
 
 [editable path="PaddleR"]
